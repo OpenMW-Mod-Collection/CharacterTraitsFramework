@@ -70,7 +70,7 @@ end
 I.CharacterTraits.addTrait {
     id = "agrunornim",
     type = traitType,
-    name = "Orc - Agrun Ornim",
+    name = "Agrun Ornim",
     description = (
         "Agrun Ornim - 'Deep Orcs' - are Orsimer living in the ancient Dwemer " ..
         "strongholds of Rourken clan in Hammerfell. They adopted Dwemer fashion and wear " ..

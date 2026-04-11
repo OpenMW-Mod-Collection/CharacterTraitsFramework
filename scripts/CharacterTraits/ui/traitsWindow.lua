@@ -24,6 +24,7 @@ local rootWidth = contentWidth + contentOuterPadding * 2 + contentCenterPadding
 local startIdx = 1
 
 local traitConditionsMet = true
+local availableTraits = 0
 
 local traitsWindow = {}
 
@@ -71,6 +72,11 @@ traitsWindow.new = function(traitMap)
     -- the thing works with indexes, so yeah
     local traitList = {}
     for _, trait in pairs(traitMap) do
+        if trait:checkDisabled() then
+            trait.name = "~ " .. trait.name
+        else
+            availableTraits = availableTraits + 1
+        end
         traitList[#traitList + 1] = trait
     end
     table.sort(traitList, itemListSorter)
@@ -199,7 +205,7 @@ traitsWindow.new = function(traitMap)
                 "Random",
                 textSize,
                 function()
-                    local idx = math.random(#traitList)
+                    local idx = math.random(availableTraits)
                     onTraitSelect(virtualTraitList, idx)
                     virtualTraitList:scrollToIndex(idx, "center")
                 end,
