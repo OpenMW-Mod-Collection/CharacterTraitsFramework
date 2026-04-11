@@ -5,9 +5,11 @@ local util = require('openmw.util')
 local v2 = util.vector2
 local I = require("openmw.interfaces")
 local self = require("openmw.self")
+local storage = require("openmw.storage")
 
 local buttonTemplate = require("scripts.CharacterTraits.ui.templates.button")
 local VirtualList = require("scripts.CharacterTraits.ui.templates.virtual_list.extras").VirtualListExt
+local settings = storage.playerSection("SettingsCharacterTraits")
 
 -- can be edited
 local textSize = 16
@@ -23,7 +25,6 @@ local contentCenterPadding = 6
 local rootWidth = contentWidth + contentOuterPadding * 2 + contentCenterPadding
 local startIdx = 1
 
-local traitConditionsMet = true
 local availableTraits = 0
 
 local traitsWindow = {}
@@ -72,7 +73,7 @@ traitsWindow.new = function(traitMap)
     -- the thing works with indexes, so yeah
     local traitList = {}
     for _, trait in pairs(traitMap) do
-        if trait:checkDisabled() then
+        if trait:checkDisabled() and not settings:get("ignoreRequirements") then
             trait.name = "~ " .. trait.name
         else
             availableTraits = availableTraits + 1
@@ -129,8 +130,6 @@ traitsWindow.new = function(traitMap)
         descBody:update()
 
         list:changeSelection(idx)
-
-        traitConditionsMet = not trait:checkDisabled()
     end
 
 
@@ -217,15 +216,15 @@ traitsWindow.new = function(traitMap)
                 "OK",
                 textSize,
                 function()
-                    if traitConditionsMet then
-                        local selectedTrait = traitList[virtualTraitList:getSelectedIndex()]
+                    local selectedTrait = traitList[virtualTraitList:getSelectedIndex()]
+                    if selectedTrait:checkDisabled() and not settings:get("ignoreRequirements") then
+                        ui.showMessage("The conditions for this " .. traitList[startIdx].type .. " are not met.")
+                    else
                         self:sendEvent(
                             "CharacterTraits_traitSelected",
                             { type = selectedTrait.type, id = selectedTrait.id }
                         )
                         auxUi.deepDestroy(root)
-                    else
-                        ui.showMessage("The conditions for this " .. traitList[startIdx].type .. " are not met.")
                     end
                 end,
                 "buttonOk",

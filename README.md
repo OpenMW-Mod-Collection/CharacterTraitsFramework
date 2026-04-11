@@ -56,6 +56,10 @@ All trait modules have to be loaded after the `CharacterTraitsFramework.lua`. Fo
 - CharacterTraits_Beliefs.omwscripts
 - ...
 
+### Requirements
+
+- [Stats Window Extender (OpenMW)](https://www.nexusmods.com/morrowind/mods/57727) by Ralts
+
 ## Compatibility
 
 Compatible with any mods.
@@ -67,10 +71,6 @@ Safe to install or update mid-playthrough. Removing the mod, though, might not r
 Nothing gamebreaking, just a little whacky behavior.
 
 - [OpenMW Daggerfall Character Creation](https://www.nexusmods.com/morrowind/mods/58464) by Slowchu - After chargen both UIs fire at the same time and one will temporarily cover the other
-
-## Requirements
-
-- [Stats Window Extender (OpenMW)](https://www.nexusmods.com/morrowind/mods/57727) by Ralts
 
 ## Credits
 

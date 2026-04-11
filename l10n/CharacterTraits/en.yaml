@@ -10,3 +10,4 @@ displayNilTraits_desc: |
   Hides the trait line if you picked "-None-" trait.
 
   Takes effect after script or game reload.
+ignoreRequirements_name: Ignore Trait Requirements

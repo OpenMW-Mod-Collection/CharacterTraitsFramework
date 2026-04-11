@@ -22,5 +22,11 @@ I.Settings.registerGroup {
             renderer = 'checkbox',
             default = false,
         },
+        {
+            key = 'ignoreRequirements',
+            name = 'ignoreRequirements_name',
+            renderer = 'checkbox',
+            default = false,
+        },
     }
 }
