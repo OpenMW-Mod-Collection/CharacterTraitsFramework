@@ -1,29 +1,29 @@
 Port all the og backgrounds:
 
-- [ ] Agoraphobia (needs spells added)
+- [x] Agoraphobia
 - [x] Artificer
 - [x] Apprenticed to a Blacksmith
-- [ ] Blood of the Dremora
-- [ ] Bodybuilder
+- [ ] ! Blood of the Dremora    (sleep encounter)
+- [ ] ! Bodybuilder    [change to I.ItemUsage interface]
 - [x] Brute
 - [x] Bully
-- [ ] Child of Nature
-- [ ] Escaped Slave
-- [ ] Famed Warrior
-- [ ] Fencing Master
-- [ ] Raised in a Fishing Village
+- [x] Child of Nature
+- [ ] Escaped Slave    (sleep encounter)
+- [ ] Famed Warrior    (sleep encounter)
+- [ ] Fencing Master    [change to I.ItemUsage interface]
+- [ ] !!! Raised in a Fishing Village    [missing spell effect]
 - [ ] Framed
-- [ ] Green Pact
-- [ ] Grey Child
+- [ ] Green Pact    [change to I.ItemUsage interface]
+- [ ] ! Grey Child
 - [x] Hyperactive
-- [ ] Inheritance
-- [ ] Knife Thrower
-- [ ] Night Mage
-- [ ] Adopted by Nobles
-- [ ] Pacifist
-- [ ] Rat King
+- [ ] !!! Inheritance
+- [ ] Knife Thrower    [Fencing Master type]
+- [ ] Night Mage    [Grey Child type]
+- [ ] !!! Adopted by Nobles
+- [ ] !!! Pacifist
+- [ ] Rat King    [Fucking hard]
 - [x] Apprenticed to a Shopkeeper
-- [ ] Small Frame
-- [ ] Star Child
-- [ ] Tracker
-- [ ] Street Urchin
+- [ ] !!! Small Frame
+- [ ] !!! Star Child
+- [ ] !!! Tracker    [missing spell effect]
+- [ ] !!! Street Urchin

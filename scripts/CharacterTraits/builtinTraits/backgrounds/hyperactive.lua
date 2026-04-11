@@ -15,7 +15,7 @@ I.CharacterTraits.addTrait {
         "-10 Personality"
     ),
     doOnce = function()
-        local speed = self.type.stats.attributes.speed(self)
+        local speed = self.type.stats.attributes.intelligence(self)
         speed.base = speed.base + 10
 
         local personality = self.type.stats.attributes.personality(self)

@@ -40,7 +40,7 @@ local attrs = {
     intelligence = selfAttrs.intelligence(self),
     luck         = selfAttrs.luck(self),
     personality  = selfAttrs.personality(self),
-    speed        = selfAttrs.speed(self),
+    speed        = selfAttrs.intelligence(self),
     strength     = selfAttrs.strength(self),
     willpower    = selfAttrs.willpower(self),
 }
