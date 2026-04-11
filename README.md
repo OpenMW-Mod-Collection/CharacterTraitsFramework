@@ -45,6 +45,17 @@ I.CharacterTraits.addTrait {
 }
 ```
 
+## Installation
+
+All trait modules have to be loaded after the `CharacterTraitsFramework.lua`. For example:
+
+- CharacterTraitsFramework.lua
+- CharacterTraits_Backgrounds.omwaddon
+- CharacterTraits_Backgrounds.omwscripts
+- CharacterTraits_Beliefs.omwaddon
+- CharacterTraits_Beliefs.omwscripts
+- ...
+
 ## Compatibility
 
 Compatible with any mods.
