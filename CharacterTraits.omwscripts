@@ -1,0 +1,3 @@
+PLAYER: scripts/CharacterTraits/player.lua
+
+MENU: scripts/CharacterTraits/settingsMenu.lua

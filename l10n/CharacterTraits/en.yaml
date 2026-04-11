@@ -1,0 +1,12 @@
+page_name: Character Traits Framework
+page_description: |
+  Allows to pick additional traits for your character.
+
+  This page does not contain settings for any trait packs.
+
+settings_groupName: Settings
+displayNilTraits_name: Display -None- Traits
+displayNilTraits_desc: |
+  Hides the trait line if you picked "-None-" trait.
+
+  Takes effect after script or game reload.

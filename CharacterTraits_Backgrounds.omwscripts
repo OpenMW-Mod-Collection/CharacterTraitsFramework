@@ -1,0 +1,8 @@
+PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/agoraphobic.lua
+PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/artificer.lua
+PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/blacksmith.lua
+GLOBAL: scripts/CharacterTraits/builtinTraits/backgrounds/brute_global.lua
+PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/brute_player.lua
+PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/bully.lua
+PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/hyperactive.lua
+PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/shopkeeper.lua

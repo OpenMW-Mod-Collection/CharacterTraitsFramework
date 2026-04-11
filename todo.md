@@ -1,0 +1,29 @@
+Port all the og backgrounds:
+
+- [ ] Agoraphobia (needs spells added)
+- [x] Artificer
+- [x] Apprenticed to a Blacksmith
+- [ ] Blood of the Dremora
+- [ ] Bodybuilder
+- [x] Brute
+- [x] Bully
+- [ ] Child of Nature
+- [ ] Escaped Slave
+- [ ] Famed Warrior
+- [ ] Fencing Master
+- [ ] Raised in a Fishing Village
+- [ ] Framed
+- [ ] Green Pact
+- [ ] Grey Child
+- [x] Hyperactive
+- [ ] Inheritance
+- [ ] Knife Thrower
+- [ ] Night Mage
+- [ ] Adopted by Nobles
+- [ ] Pacifist
+- [ ] Rat King
+- [x] Apprenticed to a Shopkeeper
+- [ ] Small Frame
+- [ ] Star Child
+- [ ] Tracker
+- [ ] Street Urchin
