@@ -4,14 +4,14 @@ Select your character's background that will shape his future.
 
 This mod adds a new chargen options alongside the existing ones: your character's background, belief, lineage and culture. All of them can range from simple stat changes to scripted events that completely alter the way you play the game.
 
-Builtin traits include:
+Builtin traits include (with minor creative liberties for the sake of balance):
 
 - [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795) by Merlord
 - [mtrByTheDivines](https://www.nexusmods.com/morrowind/mods/48031) by MTR
 - [mtrLineage](https://www.nexusmods.com/morrowind/mods/49996) by MTR
 - [mtrCultures](https://www.nexusmods.com/morrowind/mods/51282) by MTR
 
-To give you a general idea, Character Backrounds tend to be more scripted, while MTR's traits are just stat changes. Also, they all are optional.
+To give you a general idea, Character Backrounds tend to be more scripted, while MTR's traits are mostly stat changes and abilities. Also, they all are optional.
 
 > Note: Any expansions created for the MWSE version of Character Backgrounds are not compatible with this mod and must be adapted to the OpenMW Lua API.
 
@@ -47,7 +47,13 @@ I.CharacterTraits.addTrait {
 
 ## Installation
 
-All trait modules have to be loaded after the `CharacterTraitsFramework.lua`. For example:
+### Requirements
+
+- [Stats Window Extender (OpenMW)](https://www.nexusmods.com/morrowind/mods/57727) by Ralts
+
+### Load Order
+
+All trait modules need to be loaded after the `CharacterTraitsFramework.lua`. For example:
 
 - CharacterTraitsFramework.lua
 - CharacterTraits_Backgrounds.omwaddon
@@ -55,10 +61,6 @@ All trait modules have to be loaded after the `CharacterTraitsFramework.lua`. Fo
 - CharacterTraits_Beliefs.omwaddon
 - CharacterTraits_Beliefs.omwscripts
 - ...
-
-### Requirements
-
-- [Stats Window Extender (OpenMW)](https://www.nexusmods.com/morrowind/mods/57727) by Ralts
 
 ## Compatibility
 

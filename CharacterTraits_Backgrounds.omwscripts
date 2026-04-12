@@ -7,5 +7,9 @@ PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/brute_player.lua
 PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/bully.lua
 PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/childOfNature.lua
 PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/fencer.lua
+PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/fisherman.lua
+PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/greenPact_player.lua
+GLOBAL: scripts/CharacterTraits/builtinTraits/backgrounds/greenPact_global.lua
+PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/greyChild.lua
 PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/hyperactive.lua
 PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds/shopkeeper.lua

@@ -25,12 +25,12 @@ I.CharacterTraits.addTrait {
         "However, this seems to be your only outlet for magic, as you are utterly " ..
         "incapable of casting spells.\n" ..
         "\n" ..
-        "+50 Enchant\n" ..
+        "+20 Enchant\n" ..
         "> Can't cast any spells with your own magicka."
     ),
     doOnce = function()
         local enchant = self.type.stats.skills.enchant(self)
-        enchant.base = enchant.base + 50
+        enchant.base = enchant.base + 20
     end,
     onLoad = function()
         I.AnimationController.addTextKeyHandler('spellcast', function(groupname, key)

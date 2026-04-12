@@ -78,7 +78,7 @@ I.CharacterTraits.addTrait {
         "inhabitants of neighbouring areas even started believing that Dwemer never disappeared, " ..
         "but were instead turned into Orsimer as punishment for questioning the Divines.\n" ..
         "\n" ..
-        "Requirements: Orc race.\n" ..
+        "Requirements: Orcs only.\n" ..
         "\n" ..
         "+0.5x Max Magicka\n" ..
         "+5 Intelligence, Armorer, Long Blade, Enchant, Spear, Alteration, Illusion\n" ..
