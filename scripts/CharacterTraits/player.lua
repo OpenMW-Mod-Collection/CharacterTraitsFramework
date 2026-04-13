@@ -92,7 +92,7 @@ local function addTrait(data)
         StatsWindow.updateTraitLine(nilTrait)
     else
         if allTraits[newTrait.type][newTrait.id] then
-            print("Duplicate trait id: " .. newTrait.id)
+            print("Overriding trait id: " .. newTrait.id)
         end
         allTraits[newTrait.type][newTrait.id] = newTrait
     end
@@ -118,11 +118,10 @@ return {
     engineHandlers = {
         onLoad = onLoad,
         onSave = onSave,
-        onMouseWheel = mouseWheelHandler,
-        -- onMouseWheel = function(...)
-        --     ---@diagnostic disable-next-line: redundant-parameter
-        --     mouseWheelHandler(...)
-        -- end,
+        onMouseWheel = function(...)
+            ---@diagnostic disable-next-line: redundant-parameter
+            mouseWheelHandler(...)
+        end,
         onUpdate = onUpdate,
     },
     eventHandlers = {

@@ -72,6 +72,7 @@ traitsWindow.new = function(traitMap)
 
     -- the thing works with indexes, so yeah
     local traitList = {}
+    availableTraits = 0
     for _, trait in pairs(traitMap) do
         if trait:checkDisabled() and not settings:get("ignoreRequirements") then
             trait.name = "~ " .. trait.name

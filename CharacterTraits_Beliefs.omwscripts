@@ -1,1 +1,2 @@
-PLAYER: scripts/CharacterTraits/builtinTraits/beliefs.lua
+PLAYER: scripts/CharacterTraits/builtinTraits/beliefs_player.lua
+GLOBAL: scripts/CharacterTraits/builtinTraits/beliefs_global.lua
