@@ -5,7 +5,7 @@ local core = require("openmw.core")
 local selfSkills = self.type.stats.skills
 local selfAttrs = self.type.stats.attributes
 
-local traitType = require("scripts.CharacterTraits.builtinTraits.traitTypes").belief
+local traitType = require("scripts.CharacterTraits.builtinTraits.utils.traitTypes").belief
 local skills = {
     acrobatics  = selfSkills.acrobatics(self),
     alchemy     = selfSkills.alchemy(self),

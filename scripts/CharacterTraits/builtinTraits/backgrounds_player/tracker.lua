@@ -9,11 +9,16 @@ local inWild = self.cell
     and not self.cell:hasTag("NoSleep")
     and (self.cell.isExterior or self.cell.isQuasiExterior)
 
-local function updateAllStats(amount)
-    local skills = self.type.stats.skills
+local function updateBuffs(amount)
+    local speed = self.type.stats.attributes.speed(self)
     local direction = inWild and 1 or -1
-    for _, skill in pairs(skills) do
-        skill(self).base = skill(self).base + amount * direction
+    speed.base = speed.base + amount * direction
+
+    local spells = self.type.spells(self)
+    if inWild then
+        spells:add("mer_bg_tracker_a")
+    else
+        spells:remove("mer_bg_tracker_a")
     end
 end
 
@@ -25,22 +30,25 @@ local function checkCell()
     if currCellStatus == inWild then return end
 
     inWild = not inWild
-    updateAllStats(10)
+    updateBuffs(10)
 end
 
 I.CharacterTraits.addTrait {
-    id = "childofnature",
+    id = "tracker",
     type = TraitTypes.background,
-    name = "Child of Nature",
+    name = "Tracker",
     description = (
-        "You feel most at home out in the wilderness, as far from other people as possible.\n" ..
+        "As a seasoned tracker, you can read signs and disturbances left by animals to find their location. "..
+        "You also know the lay of the land, and can move quickly through uneven terrain.\n" ..
         "\n" ..
-        "+5 to all skills while outdoors in the wild\n" ..
-        "-5 to all skills while in civilization or indoors\n" ..
-        "(e.g. 10 point difference)"
+        "> When outside in wilderness:\n" ..
+        "+10 Speed\n" ..
+        "+100pt Detect Animal ability"
     ),
     doOnce = function()
-        updateAllStats(5)
+        if inWild then
+            updateBuffs(10)
+        end
     end,
     onLoad = function()
         time.runRepeatedly(checkCell, period)

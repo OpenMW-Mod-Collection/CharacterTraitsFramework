@@ -2,7 +2,7 @@ local I = require("openmw.interfaces")
 local self = require("openmw.self")
 local core = require("openmw.core")
 
-local TraitTypes = require("scripts.CharacterTraits.builtinTraits.traitTypes")
+local TraitTypes = require("scripts.CharacterTraits.builtinTraits.utils.traitTypes")
 
 I.CharacterTraits.addTrait {
     id = "greenPact",

@@ -2,7 +2,7 @@ local self = require("openmw.self")
 local I = require("openmw.interfaces")
 local core = require("openmw.core")
 
-local TraitTypes = require("scripts.CharacterTraits.builtinTraits.traitTypes")
+local TraitTypes = require("scripts.CharacterTraits.builtinTraits.utils.traitTypes")
 
 local animKeys = {
     ["self start"] = true,

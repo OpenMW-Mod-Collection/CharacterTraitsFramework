@@ -5,7 +5,7 @@ local U = {}
 --- Merges handler tables from multiple Lua files, supporting multiple handler types.
 --- @param folderPath string
 --- @return table<string, table<string, function>>
-U.initTraits = function(folderPath)
+U.mergeAllHandlers = function(folderPath)
     local merged = {}
 
     -- Temporary storage: all[handlerType][handlerName] = {func1, func2, ...}

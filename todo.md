@@ -3,7 +3,7 @@
 - [x] Agoraphobia
 - [x] Artificer
 - [x] Apprenticed to a Blacksmith
-- [ ] ! Blood of the Dremora    (sleep encounter)
+- [ ] Blood of the Dremora    (sleep encounter)
 - [x] Bodybuilder
 - [x] Brute
 - [x] Bully
@@ -11,22 +11,22 @@
 - [ ] Escaped Slave    (sleep encounter)
 - [ ] Famed Warrior    (sleep encounter)
 - [x] Fencing Master
-- [ ] !!! Raised in a Fishing Village    [missing spell effect]
+- [x] Raised in a Fishing Village    [missing spell effect]
 - [x] Framed
 - [x] Green Pact
 - [x] Grey Child
 - [x] Hyperactive
 - [x] Inheritance
-- [ ] Knife Thrower
-- [ ] Night Mage
-- [ ] Adopted by Nobles
-- [ ] Pacifist
+- [x] Knife Thrower
+- [x] Night Mage
+- [x] Adopted by Nobles
+- [x] Pacifist
 - [ ] Rat King    [Fucking hard]
 - [x] Apprenticed to a Shopkeeper
-- [ ] Small Frame
+- [x] Small Frame
 - [ ] Star Child
-- [ ] Tracker    [missing spell effect]
-- [ ] Street Urchin
+- [x] Tracker    [missing spell effect]
+- [x] Street Urchin
 
 ## Community BG mods status
 

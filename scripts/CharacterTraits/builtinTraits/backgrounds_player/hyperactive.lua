@@ -1,7 +1,7 @@
 local I = require("openmw.interfaces")
 local self = require("openmw.self")
 
-local TraitTypes = require("scripts.CharacterTraits.builtinTraits.traitTypes")
+local TraitTypes = require("scripts.CharacterTraits.builtinTraits.utils.traitTypes")
 
 I.CharacterTraits.addTrait {
     id = "hyperactive",

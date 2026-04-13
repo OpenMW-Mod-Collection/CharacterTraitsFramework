@@ -3,12 +3,11 @@ local self = require("openmw.self")
 local time = require("openmw_aux.time")
 local types = require("openmw.types")
 
-local TraitTypes = require("scripts.CharacterTraits.builtinTraits.traitTypes")
+local TraitTypes = require("scripts.CharacterTraits.builtinTraits.utils.traitTypes")
 
 local period = 1
 local rightHandItem = self.type.getEquipment(self, self.type.EQUIPMENT_SLOT.CarriedRight)
-local inFencingStance = self.type.getStance(self) == self.type.STANCE.Weapon
-    and rightHandItem
+local inFencingStance = rightHandItem
     and rightHandItem.type == types.Weapon
     and rightHandItem.type.records[rightHandItem.recordId].type == rightHandItem.type.TYPE.LongBladeOneHand
     and not self.type.getEquipment(self, self.type.EQUIPMENT_SLOT.CarriedLeft)
@@ -21,8 +20,7 @@ end
 
 local function checkOffHand()
     rightHandItem = self.type.getEquipment(self, self.type.EQUIPMENT_SLOT.CarriedRight)
-    local currStance = self.type.getStance(self) == self.type.STANCE.Weapon
-        and rightHandItem
+    local currStance = rightHandItem
         and rightHandItem.type == types.Weapon
         and rightHandItem.type.records[rightHandItem.recordId].type == rightHandItem.type.TYPE.LongBladeOneHand
         and not self.type.getEquipment(self, self.type.EQUIPMENT_SLOT.CarriedLeft)

@@ -2,7 +2,7 @@ local I = require("openmw.interfaces")
 local self = require("openmw.self")
 local time = require("openmw_aux.time")
 
-local TraitTypes = require("scripts.CharacterTraits.builtinTraits.traitTypes")
+local TraitTypes = require("scripts.CharacterTraits.builtinTraits.utils.traitTypes")
 
 local period = 1
 local inExterior = self.cell and (self.cell.isExterior or self.cell.isQuasiExterior)

@@ -4,7 +4,7 @@ local self = require("openmw.self")
 local selfSkills = self.type.stats.skills
 local selfAttrs = self.type.stats.attributes
 
-local traitType = require("scripts.CharacterTraits.builtinTraits.traitTypes").lineage
+local traitType = require("scripts.CharacterTraits.builtinTraits.utils.traitTypes").lineage
 local skills = {
     acrobatics  = selfSkills.acrobatics(self),
     alchemy     = selfSkills.alchemy(self),

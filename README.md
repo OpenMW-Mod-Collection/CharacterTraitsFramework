@@ -4,7 +4,7 @@ Select your character's background that will shape his future.
 
 This mod adds a new chargen options alongside the existing ones: your character's background, belief, lineage and culture. All of them can range from simple stat changes to scripted events that completely alter the way you play the game.
 
-Builtin traits include (with minor creative liberties for the sake of balance):
+Builtin traits include (with minor changes for the sake of balance):
 
 - [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795) by Merlord
 - [mtrByTheDivines](https://www.nexusmods.com/morrowind/mods/48031) by MTR

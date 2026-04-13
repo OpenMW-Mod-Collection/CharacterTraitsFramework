@@ -3,7 +3,7 @@ local self = require("openmw.self")
 local time = require("openmw_aux.time")
 local core = require("openmw.core")
 
-local TraitTypes = require("scripts.CharacterTraits.builtinTraits.traitTypes")
+local TraitTypes = require("scripts.CharacterTraits.builtinTraits.utils.traitTypes")
 local period = 1
 local nightPoint = 18 * time.hour
 local dayPoint = 6 * time.hour
@@ -51,8 +51,10 @@ I.CharacterTraits.addTrait {
         "> During the day:\n" ..
         "-10 Endurance and Willpower"
     ),
+    doOnce = function()
+        changeStats()
+    end,
     onLoad = function()
         time.runRepeatedly(checkTime, period)
-        changeStats()
     end,
 }

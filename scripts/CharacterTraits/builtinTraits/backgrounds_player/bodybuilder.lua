@@ -2,7 +2,7 @@ local I = require("openmw.interfaces")
 local self = require("openmw.self")
 local time = require("openmw_aux.time")
 
-local traitType = require("scripts.CharacterTraits.builtinTraits.traitTypes").background
+local traitType = require("scripts.CharacterTraits.builtinTraits.utils.traitTypes").background
 local absVisible = not self.type.getEquipment(self, self.type.EQUIPMENT_SLOT.Cuirass)
     and not self.type.getEquipment(self, self.type.EQUIPMENT_SLOT.Shirt)
     and not self.type.getEquipment(self, self.type.EQUIPMENT_SLOT.Robe)
