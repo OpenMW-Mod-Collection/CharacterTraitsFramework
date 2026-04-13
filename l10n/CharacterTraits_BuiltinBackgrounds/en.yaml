@@ -1,0 +1,19 @@
+page_name: Character Traits - Builtin Backgrounds
+page_description: Settings for builtin backgrounds.
+
+framed_groupName: Framed
+minBounty_name: Min Added Bounty
+maxBounty_name: Max Added Bounty
+bountyLimit_name: |
+  Max bounty at which the background stops adding you more bounty. It's not a cap, though.
+
+  Note: in vanilla at 1000 bounty guards confront you on sight and at 5000 bounty attack on sight.
+minInterval_name: Min Bounty Interval (days)
+maxInterval_name: Max Bounty Interval (days)
+
+greenPact_groupName: Green Pact
+forceSunsDusk_name: Force Sun's Dusk Green Pact Labeling
+forceSunsDusk_desc: |
+  Does nothing if Sun's Dusk is not installed.
+
+  If disabled, when Sun's Dusk doesn't recognize an ingredient as "green pact safe" by its metrics, the mod will additionally check the falloff table and names.

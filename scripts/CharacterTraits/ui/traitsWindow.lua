@@ -17,7 +17,7 @@ local contentWidth = 750
 local traitListWidthFraction = .35
 local traitListWidth = contentWidth * traitListWidthFraction
 local descriptionWidth = contentWidth - traitListWidth
-local contentHeight = 400
+local contentHeight = 450
 -- don't touch
 local topPadding = 8
 local contentOuterPadding = 4
@@ -151,10 +151,6 @@ traitsWindow.new = function(traitMap)
                     onTraitSelect(list, idx)
                 end,
             }
-
-            -- if traitList[idx]:checkDisabled() then
-            --     itemLayout.props.textColor = Colors.DISABLED
-            -- end
 
             return itemLayout
         end,

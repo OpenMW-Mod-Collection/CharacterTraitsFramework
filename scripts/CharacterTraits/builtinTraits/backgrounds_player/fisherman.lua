@@ -30,14 +30,14 @@ I.CharacterTraits.addTrait {
         shortBlade.base = shortBlade.base + 5
 
         local activeSpells = self.type.activeSpells(self)
-        -- activeSpells:add {
-        --     id = "background_fisherman",
-        --     ---@diagnostic disable-next-line: assign-type-mismatch
-        --     effects = { 0 },
-        --     ignoreResistances = true,
-        --     ignoreSpellAbsorption = true,
-        --     ignoreReflect = true,
-        --     quiet = true,
-        -- }
+        activeSpells:add {
+            id = "background_fisherman",
+            ---@diagnostic disable-next-line: assign-type-mismatch
+            effects = { 0 },
+            ignoreResistances = true,
+            ignoreSpellAbsorption = true,
+            ignoreReflect = true,
+            quiet = true,
+        }
     end,
 }

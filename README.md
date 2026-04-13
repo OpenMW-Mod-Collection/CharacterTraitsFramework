@@ -77,7 +77,6 @@ Nothing gamebreaking, just a little whacky behavior.
 ## Credits
 
 **Sosnoviy Bor** - Author  
-**Mephala Worshipper** - Porting the traits  
 **Greatness7** - Scrollable list template ([Virtual List](https://github.com/Greatness7/openmw_virtual_list/tree/main))  
 **Ralts** - Button template ([Magic Window Extender](https://www.nexusmods.com/morrowind/mods/58064))  
 **Merlord** - Design, inspiration and traits ([Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795))  

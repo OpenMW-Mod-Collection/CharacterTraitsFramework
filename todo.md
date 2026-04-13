@@ -12,21 +12,21 @@
 - [ ] Famed Warrior    (sleep encounter)
 - [x] Fencing Master
 - [ ] !!! Raised in a Fishing Village    [missing spell effect]
-- [ ] Framed
+- [x] Framed
 - [x] Green Pact
 - [x] Grey Child
 - [x] Hyperactive
-- [ ] !!! Inheritance
+- [x] Inheritance
 - [ ] Knife Thrower
 - [ ] Night Mage
-- [ ] !!! Adopted by Nobles
-- [ ] !!! Pacifist
+- [ ] Adopted by Nobles
+- [ ] Pacifist
 - [ ] Rat King    [Fucking hard]
 - [x] Apprenticed to a Shopkeeper
-- [ ] !!! Small Frame
-- [ ] !!! Star Child
-- [ ] !!! Tracker    [missing spell effect]
-- [ ] !!! Street Urchin
+- [ ] Small Frame
+- [ ] Star Child
+- [ ] Tracker    [missing spell effect]
+- [ ] Street Urchin
 
 ## Community BG mods status
 
