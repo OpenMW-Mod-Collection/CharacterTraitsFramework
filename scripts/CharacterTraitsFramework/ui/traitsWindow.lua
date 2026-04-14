@@ -7,9 +7,9 @@ local I = require("openmw.interfaces")
 local self = require("openmw.self")
 local storage = require("openmw.storage")
 
-local buttonTemplate = require("scripts.CharacterTraits.ui.templates.button")
-local VirtualList = require("scripts.CharacterTraits.ui.templates.virtual_list.extras").VirtualListExt
-local settings = storage.playerSection("SettingsCharacterTraits")
+local buttonTemplate = require("scripts.CharacterTraitsFramework.ui.templates.button")
+local VirtualList = require("scripts.CharacterTraitsFramework.ui.templates.virtual_list.extras").VirtualListExt
+local settings = storage.playerSection("SettingsCharacterTraitsFramework")
 
 -- can be edited
 local textSize = 16

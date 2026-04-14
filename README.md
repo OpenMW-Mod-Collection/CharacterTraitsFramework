@@ -2,16 +2,9 @@
 
 Select your character's background that will shape his future.
 
-This mod adds a new chargen options alongside the existing ones: your character's background, belief, lineage and culture. All of them can range from simple stat changes to scripted events that completely alter the way you play the game.
+**This is a framework and it does nothing on its own!**
 
-Builtin traits include (with minor changes for the sake of balance):
-
-- [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795) by Merlord
-- [mtrByTheDivines](https://www.nexusmods.com/morrowind/mods/48031) by MTR
-- [mtrLineage](https://www.nexusmods.com/morrowind/mods/49996) by MTR
-- [mtrCultures](https://www.nexusmods.com/morrowind/mods/51282) by MTR
-
-To give you a general idea, Character Backrounds tend to be more scripted, while MTR's traits are mostly stat changes and abilities. Also, they all are optional.
+This framework allows anyone to create any additional chargen traits similar to [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795). They can range from simple stat changes to scripted events that completely altering the way you approach the game.
 
 > Note: Any expansions created for the MWSE version of Character Backgrounds are not compatible with this mod and must be adapted to the OpenMW Lua API.
 

@@ -1,5 +1,0 @@
-PLAYER: scripts/CharacterTraits/builtinTraits/backgrounds_player.lua
-GLOBAL: scripts/CharacterTraits/builtinTraits/backgrounds_global.lua
-
-MENU: scripts/CharacterTraits/builtinTraits/backgrounds_settingsMenu.lua
-GLOBAL: scripts/CharacterTraits/builtinTraits/backgrounds_settingsGlobal.lua

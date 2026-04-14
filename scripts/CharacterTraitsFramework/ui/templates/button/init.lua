@@ -6,7 +6,7 @@ local ambient = require("openmw.ambient")
 local ui = require("openmw.ui")
 local auxUi = require("openmw_aux.ui")
 
-local C = require("scripts.CharacterTraits.ui.templates.button.consts")
+local C = require(... .. ".consts")
 
 local buttonBorderSize = 4
 local borderSideParts = {

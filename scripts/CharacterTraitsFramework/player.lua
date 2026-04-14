@@ -2,9 +2,9 @@ local self = require("openmw.self")
 local I = require("openmw.interfaces")
 local core = require("openmw.core")
 
-local StatsWindow = require("scripts.CharacterTraits.ui.statWindow")
-local Trait = require("scripts.CharacterTraits.model.trait")
-local TraitsWindow = require("scripts.CharacterTraits.ui.traitsWindow")
+local StatsWindow = require("scripts.CharacterTraitsFramework.ui.statWindow")
+local Trait = require("scripts.CharacterTraitsFramework.model.trait")
+local TraitsWindow = require("scripts.CharacterTraitsFramework.ui.traitsWindow")
 
 ---@type table<string, table<string, Trait>>
 local allTraits = {

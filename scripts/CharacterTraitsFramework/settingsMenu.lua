@@ -1,16 +1,16 @@
 local I = require("openmw.interfaces")
 
 I.Settings.registerPage {
-    key = 'CharacterTraits',
-    l10n = 'CharacterTraits',
+    key = 'CharacterTraitsFramework',
+    l10n = 'CharacterTraitsFramework',
     name = 'page_name',
     description = 'page_description',
 }
 
 I.Settings.registerGroup {
-    key = 'SettingsCharacterTraits',
-    page = 'CharacterTraits',
-    l10n = 'CharacterTraits',
+    key = 'SettingsCharacterTraitsFramework',
+    page = 'CharacterTraitsFramework',
+    l10n = 'CharacterTraitsFramework',
     name = 'settings_groupName',
     permanentStorage = true,
     order = 1,
