@@ -56,6 +56,7 @@ local function initTraitWindow()
     end
 
     if allTraitsPicked then
+        self:sendEvent("CharacterTraits_allTraitsPicked")
         return
     end
 
@@ -131,5 +132,6 @@ return {
     interface = {
         addTrait = addTrait,
         getSelectedTraits = function() return selectedTraits end,
+        allTraitsPicked = function() return allTraitsPicked end,
     }
 }
