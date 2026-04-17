@@ -131,6 +131,7 @@ return {
     interfaceName = "CharacterTraits",
     interface = {
         addTrait = addTrait,
+        getAllTraits = function() return allTraits end,
         getSelectedTraits = function() return selectedTraits end,
         allTraitsPicked = function() return allTraitsPicked end,
     }
