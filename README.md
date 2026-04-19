@@ -1,10 +1,8 @@
 # Character Traits Framework (OpenMW)
 
-Select your character's background that will shape his future.
+Create your own chargen traits. Backgrounds, beliefs, lineages - you name it.
 
-**This is a framework and it does nothing on its own!**
-
-This framework allows anyone to create any additional chargen traits similar to [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795). They can range from simple stat changes to scripted events that completely altering the way you approach the game.
+This framework allows anyone to create any additional chargen traits similar to [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795). They can range from simple stat changes to scripted events that completely alter the way you approach the game.
 
 > Note: Any expansions created for the MWSE version of Character Backgrounds are not compatible with this mod and must be adapted to the OpenMW Lua API.
 
@@ -16,16 +14,16 @@ This framework allows anyone to create any additional chargen traits similar to 
 
 ### Load Order
 
-All trait modules need to be loaded after the `CharacterTraitsFramework.lua`. For example:
+All trait modules need to be loaded after the `CharacterTraitsFramework.omwscripts`. For example:
 
-- CharacterTraitsFramework.lua
+- CharacterTraitsFramework.omwscripts
 - CharacterTraits_Backgrounds.omwaddon
 - CharacterTraits_Backgrounds.omwscripts
 - CharacterTraits_Beliefs.omwaddon
 - CharacterTraits_Beliefs.omwscripts
 - ...
 
-Trait packs might be load order sensitive if they override each other's traits, so look out for any notices on their respective pages.
+Trait packs might be load order sensitive by themselves or have their own requirements, so look out for any notices on their respective pages.
 
 ## Compatibility
 
@@ -80,7 +78,7 @@ I.CharacterTraits.addTrait {
 **Sosnoviy Bor** - Author  
 **Greatness7** - Scrollable list template ([Virtual List](https://github.com/Greatness7/openmw_virtual_list/tree/main))  
 **Ralts** - Button template ([Magic Window Extender](https://www.nexusmods.com/morrowind/mods/58064))  
-**Merlord** - Design, inspiration and traits ([Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795))  
-**MTR** - Design, inspiration and traits ([mtrByTheDivines](https://www.nexusmods.com/morrowind/mods/48031), [mtrLineage](https://www.nexusmods.com/morrowind/mods/49996) and [mtrCultures](https://www.nexusmods.com/morrowind/mods/51282))  
+**Merlord** - Design and inspiration ([Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795))  
+**MTR** - Design and inspiration ([mtrByTheDivines](https://www.nexusmods.com/morrowind/mods/48031), [mtrLineage](https://www.nexusmods.com/morrowind/mods/49996) and [mtrCultures](https://www.nexusmods.com/morrowind/mods/51282))  
 **ownlyme, hyacinth and urm** - Invaluable help with figuring out the UI API  
 **You, the community** - Inspiring to start and continue modding
