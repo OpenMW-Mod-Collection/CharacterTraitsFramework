@@ -183,7 +183,6 @@ Templates.button = function(text, textSize, onClick, name, bgrAlpha)
                 props = {
                     horizontal = true,
                     arrange = ui.ALIGNMENT.Center,
-                    textAlignV = ui.ALIGNMENT.Center,
                 },
                 content = ui.content {
                     Templates.intervalH(8),
