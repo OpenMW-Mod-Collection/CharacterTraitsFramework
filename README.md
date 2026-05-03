@@ -2,10 +2,6 @@
 
 Create your own chargen traits. Backgrounds, beliefs, lineages - you name it.
 
-<p align="center">
-    <img src="media/modatonHeader.png" alt="Modathon 2026">
-</p>
-
 This framework allows anyone to create any additional chargen traits similar to [Merlord's Character Backgrounds](https://www.nexusmods.com/morrowind/mods/46795). They can range from simple stat changes to scripted events that completely alter the way you approach the game.
 
 > Note: Any expansions created for the MWSE version of Character Backgrounds are not compatible with this mod and must be adapted to the OpenMW Lua API.

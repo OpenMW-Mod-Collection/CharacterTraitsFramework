@@ -2,6 +2,12 @@ local self = require("openmw.self")
 local I = require("openmw.interfaces")
 local core = require("openmw.core")
 
+local deps = require("scripts.CharacterTraitsFramework.utils.dependencies")
+deps.checkAll("Character Traits Framework", { {
+    plugin = "StatsWindow.omwscripts",
+    interface = I.StatsWindow,
+} })
+
 local StatsWindow = require("scripts.CharacterTraitsFramework.ui.statWindow")
 local Trait = require("scripts.CharacterTraitsFramework.model.trait")
 local TraitsWindow = require("scripts.CharacterTraitsFramework.ui.traitsWindow")
@@ -130,9 +136,10 @@ return {
     },
     interfaceName = "CharacterTraits",
     interface = {
-        addTrait = addTrait,
-        getAllTraits = function() return allTraits end,
+        version           = 1,
+        addTrait          = addTrait,
+        getAllTraits      = function() return allTraits end,
         getSelectedTraits = function() return selectedTraits end,
-        allTraitsPicked = function() return allTraitsPicked end,
+        allTraitsPicked   = function() return allTraitsPicked end,
     }
 }
