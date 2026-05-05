@@ -42,6 +42,7 @@ Nothing gamebreaking, just a little whacky behavior.
 A non-exhaustive list of mods adding new traits:
 
 - [Community Traits Ported](https://www.nexusmods.com/morrowind/mods/58704) by me and the MWSE community
+- [Mercenary Background](https://www.nexusmods.com/morrowind/mods/58874) by Kubsov
 
 ## Adding your own Traits
 
