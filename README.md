@@ -10,13 +10,20 @@ This framework allows anyone to create any additional chargen traits similar to 
 
 ### Requirements
 
+They have to be loaded before this mod.
+
 - [Stats Window Extender (OpenMW)](https://www.nexusmods.com/morrowind/mods/57727) by Ralts
 
 ### Load Order
 
-All trait modules need to be loaded after the `CharacterTraitsFramework.omwscripts`. For example:
+All trait modules have to be loaded after this mod. For example:
 
-- CharacterTraitsFramework.omwscripts
+- ...
+- Stats Window.esp
+- Stats Window.omwscripts
+- ...
+- **CharacterTraitsFramework.omwscripts**
+- ...
 - CharacterTraits_Backgrounds.omwaddon
 - CharacterTraits_Backgrounds.omwscripts
 - CharacterTraits_Beliefs.omwaddon
@@ -43,6 +50,7 @@ A non-exhaustive list of mods adding new traits:
 
 - [Community Traits Ported](https://www.nexusmods.com/morrowind/mods/58704) by me and the MWSE community
 - [Mercenary Background](https://www.nexusmods.com/morrowind/mods/58874) by Kubsov
+- [Bard Character Background for Bardcraft](https://www.nexusmods.com/morrowind/mods/58932) by F1shjin
 
 ## Adding your own Traits
 

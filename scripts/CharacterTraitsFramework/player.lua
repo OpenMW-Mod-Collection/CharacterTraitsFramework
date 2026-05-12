@@ -63,6 +63,8 @@ local function initTraitWindow()
 
     if allTraitsPicked then
         self:sendEvent("CharacterTraits_allTraitsPicked")
+        -- NCG compat
+        self:sendEvent("onChargenModFinished", { modId = "Chacacter Traits Framework" })
         return
     end
 
@@ -95,7 +97,7 @@ local function addTrait(data)
             [nilTrait.id] = nilTrait,
             [newTrait.id] = newTrait,
         }
-        allTraitsPicked = false
+        allTraitsPicked = selectedTraits[newTrait.type] and allTraitsPicked
         StatsWindow.updateTraitLine(nilTrait)
     else
         if allTraits[newTrait.type][newTrait.id] then
@@ -130,6 +132,15 @@ return {
             mouseWheelHandler(...)
         end,
         onUpdate = onUpdate,
+        onActive = function()
+            -- NCG compat
+            if not allTraitsPicked then
+                self:sendEvent(
+                    "onChargenModRegistration",
+                    { modId = "Chacacter Traits Framework" }
+                )
+            end
+        end
     },
     eventHandlers = {
         CharacterTraits_traitSelected = traitSelected,
