@@ -51,6 +51,8 @@ A non-exhaustive list of mods adding new traits:
 - [Community Traits Ported](https://www.nexusmods.com/morrowind/mods/58704) by me and the MWSE community
 - [Mercenary Background](https://www.nexusmods.com/morrowind/mods/58874) by Kubsov
 - [Bard Character Background for Bardcraft](https://www.nexusmods.com/morrowind/mods/58932) by F1shjin
+- [Scavenger Character Background](https://www.nexusmods.com/morrowind/mods/58983) by F1shjin
+- [Debtor Background](https://www.nexusmods.com/morrowind/mods/58863) by blurpanda
 
 ## Adding your own Traits
 
