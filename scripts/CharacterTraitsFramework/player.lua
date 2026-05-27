@@ -147,10 +147,12 @@ return {
     },
     interfaceName = "CharacterTraits",
     interface = {
-        version           = 1,
+        version           = 2,
         addTrait          = addTrait,
         getAllTraits      = function() return allTraits end,
         getSelectedTraits = function() return selectedTraits end,
         allTraitsPicked   = function() return allTraitsPicked end,
+        resetTraits       = function() selectedTraits = {} end,
+        initTraitWindow   = initTraitWindow,
     }
 }
