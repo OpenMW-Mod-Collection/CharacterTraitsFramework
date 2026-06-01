@@ -53,6 +53,7 @@ A non-exhaustive list of mods adding new traits:
 - [Bard Character Background for Bardcraft](https://www.nexusmods.com/morrowind/mods/58932) by F1shjin
 - [Scavenger Character Background](https://www.nexusmods.com/morrowind/mods/58983) by F1shjin
 - [Debtor Background](https://www.nexusmods.com/morrowind/mods/58863) by blurpanda
+- [Boons and Burdens](https://www.nexusmods.com/morrowind/mods/59130) by me
 
 ## Adding your own Traits
 
