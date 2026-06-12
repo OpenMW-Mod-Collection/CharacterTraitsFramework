@@ -34,7 +34,14 @@ Trait packs might be load order sensitive by themselves or have their own requir
 
 ## Compatibility
 
-Compatible with any mods.
+Compatible with practically anything.
+
+Comfirmed to be compatible:
+
+- [Natural Character Growth](https://www.nexusmods.com/morrowind/mods/57801) 2.0.8 or newer
+- [Skill Evolution](https://www.nexusmods.com/morrowind/mods/57802) 2.0.9 or newer
+- [Improved Vanilla Leveling](https://www.nexusmods.com/morrowind/mods/57062)
+- [Ultimate Leveling](https://www.nexusmods.com/morrowind/mods/58957)
 
 Safe to install or update mid-playthrough. Removing the mod, though, might not revert all the effects granted by your traits.
 

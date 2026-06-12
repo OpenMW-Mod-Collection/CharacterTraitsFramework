@@ -1,8 +1,7 @@
 ---@diagnostic disable: missing-fields
 local ui = require('openmw.ui')
 local auxUi = require("openmw_aux.ui")
-local util = require('openmw.util')
-local v2 = util.vector2
+local v2 = require('openmw.util').vector2
 local I = require("openmw.interfaces")
 local self = require("openmw.self")
 local storage = require("openmw.storage")
@@ -18,11 +17,14 @@ local traitListWidthFraction = .35
 local traitListWidth = contentWidth * traitListWidthFraction
 local descriptionWidth = contentWidth - traitListWidth
 local contentHeight = 450
+local filterHeight = 26
+local disabledPrefix = "~ "
 -- don't touch
 local topPadding = 8
 local contentOuterPadding = 4
 local contentCenterPadding = 6
 local rootWidth = contentWidth + contentOuterPadding * 2 + contentCenterPadding
+local vListHeight = contentHeight - filterHeight - contentOuterPadding
 local startIdx = 1
 
 local availableTraits = 0
@@ -32,26 +34,31 @@ local traitsWindow = {}
 local function padding(x, y)
     return {
         props = {
-            size = util.vector2(x, y)
+            size = v2(x, y)
         }
     }
 end
 
-local function borderPadding(content, size)
+local function border(content, size)
     return {
         name = "wrapper",
         template = I.MWUI.templates.borders,
         props = {
             size = size
         },
-        content = ui.content {
-            {
-                name = "padding",
-                template = I.MWUI.templates.padding,
-                content = ui.content { content }
-            }
-        }
+        content = ui.content { content }
     }
+end
+
+local function borderPadding(content, size)
+    return border(
+        {
+            name = "padding",
+            template = I.MWUI.templates.padding,
+            content = ui.content { content }
+        },
+        size
+    )
 end
 
 local function itemListSorter(a, b)
@@ -66,6 +73,13 @@ local function itemListSorter(a, b)
     return a.name:lower() < b.name:lower()
 end
 
+-- strips the disabled prefix so search matches the real name
+---@param trait Trait
+---@return string
+local function getDisplayName(trait)
+    return (trait.name:gsub("^" .. disabledPrefix, ""))
+end
+
 
 traitsWindow.new = function(traitMap)
     local root
@@ -75,7 +89,7 @@ traitsWindow.new = function(traitMap)
     availableTraits = 0
     for _, trait in pairs(traitMap) do
         if trait:checkDisabled() and not settings:get("ignoreRequirements") then
-            trait.name = "~ " .. trait.name
+            trait.name = disabledPrefix .. trait.name
         else
             availableTraits = availableTraits + 1
         end
@@ -83,47 +97,81 @@ traitsWindow.new = function(traitMap)
     end
     table.sort(traitList, itemListSorter)
 
-    local descWrapper = borderPadding({
-            name = "descFlex",
+    -- returns a list of indices into `traitList` that match the query
+    ---@param query string
+    ---@return table<Trait>
+    local function filterTraits(query)
+        query = query:lower()
+        local filtered = {}
+        for i, trait in ipairs(traitList) do
+            if query == "" or getDisplayName(trait):lower():find(query, 1, true) then
+                filtered[#filtered + 1] = i
+            end
+        end
+        return filtered
+    end
+
+    -- `filteredList[filteredIdx]` -> index into `traitList`
+    local filteredList = filterTraits("")
+
+    local descWrapper = borderPadding(
+        {
+            name = "descFlex_H",
             type = ui.TYPE.Flex,
             props = {
-                horizontal = false,
-                autoSize = false,
-                size = v2(descriptionWidth, contentHeight),
+                horizontal = true,
             },
             content = ui.content {
-                ui.create {
-                    name = "header",
-                    template = I.MWUI.templates.textHeader,
+                padding(2, 0),
+                {
+                    name = "descFlex_V",
+                    type = ui.TYPE.Flex,
                     props = {
-                        text = traitList[startIdx].name,
-                        textSize = textSize,
-                    }
-                },
-                padding(0, 5),
-                ui.create {
-                    name = "description",
-                    template = I.MWUI.templates.textParagraph,
-                    props = {
-                        text = traitList[startIdx].description,
-                        textSize = textSize,
+                        horizontal = false,
+                        autoSize = false,
+                        size = v2(descriptionWidth, contentHeight),
                     },
-                    external = {
-                        stretch = .975,
-                        grow = 1,
+                    content = ui.content {
+                        padding(0, 2),
+                        ui.create {
+                            name = "header",
+                            template = I.MWUI.templates.textHeader,
+                            props = {
+                                text = traitList[startIdx].name,
+                                textSize = textSize,
+                            }
+                        },
+                        padding(0, 5),
+                        ui.create {
+                            name = "description",
+                            template = I.MWUI.templates.textParagraph,
+                            props = {
+                                text = traitList[startIdx].description,
+                                textSize = textSize,
+                            },
+                            external = {
+                                stretch = .975,
+                                grow = 1,
+                            }
+                        },
                     }
-                },
+                }
             }
         },
         v2(descriptionWidth, contentHeight)
     )
 
-    local descFlex = descWrapper.content["padding"].content["descFlex"]
-    local descHeader = descFlex.content[1]
-    local descBody = descFlex.content[3]
+    local descFlex = descWrapper.content["padding"].content["descFlex_H"].content["descFlex_V"]
+    local descHeader = descFlex.content[2]
+    local descBody = descFlex.content[4]
+
+    -- The actually-selected trait (used for description/OK/Random), tracked
+    -- by its index into `traitList` so filtering can't change it.
+    local chosenTraitIdx = filteredList[startIdx]
 
     local function onTraitSelect(list, idx)
-        local trait = traitList[idx]
+        chosenTraitIdx = filteredList[idx]
+        local trait = traitList[chosenTraitIdx]
 
         descHeader.layout.props.text = trait.name
         descBody.layout.props.text = trait.description
@@ -135,16 +183,15 @@ traitsWindow.new = function(traitMap)
 
 
 
-    local virtualTraitList
-    virtualTraitList = VirtualList.create {
-        viewportSize = v2(traitListWidth - 3, contentHeight - 3),
+    local virtualTraitList = VirtualList.create {
+        viewportSize = v2(traitListWidth, vListHeight),
         itemSize = v2(traitListWidth, textSize + 2),
-        itemCount = #traitList,
+        itemCount = #filteredList,
         itemLayout = function(idx, list)
             local itemLayout = list:createItemLayout {
                 index = idx,
                 props = {
-                    text = traitList[idx].name,
+                    text = traitList[filteredList[idx]].name,
                     textSize = textSize,
                 },
                 onMousePress = function()
@@ -162,6 +209,56 @@ traitsWindow.new = function(traitMap)
         end,
     })
 
+    -- Finds where `chosenTraitIdx` lives in `filteredList`, or nil if it
+    -- was filtered out.
+    local function findChosenFilteredIdx()
+        for i, traitIdx in ipairs(filteredList) do
+            if traitIdx == chosenTraitIdx then
+                return i
+            end
+        end
+        return nil
+    end
+
+    local vListSearchBox = virtualTraitList:createSearchBox {
+        text = "Search",
+        textSize = textSize,
+        onTextChanged = function(text, _)
+            local oldIdx = virtualTraitList:getSelectedIndex()
+
+            filteredList = filterTraits(text)
+            local highlightIdx = findChosenFilteredIdx()
+
+            virtualTraitList:rebuildAndScroll(#filteredList, oldIdx, highlightIdx)
+            ---@diagnostic disable-next-line: param-type-mismatch
+            virtualTraitList:changeSelection(highlightIdx)
+        end,
+        onTextCleared = function(_, _)
+            local oldIdx = virtualTraitList:getSelectedIndex()
+
+            filteredList = filterTraits("")
+
+            local highlightIdx = findChosenFilteredIdx()
+
+            virtualTraitList:rebuildAndScroll(#filteredList, oldIdx, highlightIdx)
+            ---@diagnostic disable-next-line: param-type-mismatch
+            virtualTraitList:changeSelection(highlightIdx)
+        end,
+    }
+
+    local vListFlex = {
+        name = "virtualList_Flex_V",
+        type = ui.TYPE.Flex,
+        props = {
+            horizontal = false,
+        },
+        content = ui.content {
+            border(vListSearchBox, v2(traitListWidth, filterHeight)),
+            padding(0, contentOuterPadding),
+            border(virtualTraitList:getElement(), v2(traitListWidth, vListHeight)),
+        }
+    }
+
     local content = {
         name = "content",
         type = ui.TYPE.Flex,
@@ -171,7 +268,7 @@ traitsWindow.new = function(traitMap)
         },
         content = ui.content {
             padding(contentOuterPadding, 0),
-            borderPadding(virtualTraitList:getElement(), v2(traitListWidth, contentHeight)),
+            vListFlex,
             padding(contentCenterPadding, 0),
             descWrapper,
             padding(contentOuterPadding, 0),
@@ -201,7 +298,18 @@ traitsWindow.new = function(traitMap)
                 "Random",
                 textSize,
                 function()
-                    local idx = math.random(availableTraits)
+                    if #filteredList == 0 then return end
+
+                    local available = {}
+                    for i, traitIdx in ipairs(filteredList) do
+                        local trait = traitList[traitIdx]
+                        if not (trait:checkDisabled() and not settings:get("ignoreRequirements")) then
+                            available[#available + 1] = i
+                        end
+                    end
+                    if #available == 0 then return end
+
+                    local idx = available[math.random(#available)]
                     onTraitSelect(virtualTraitList, idx)
                     virtualTraitList:scrollToIndex(idx, "center")
                 end,
@@ -213,7 +321,7 @@ traitsWindow.new = function(traitMap)
                 "OK",
                 textSize,
                 function()
-                    local selectedTrait = traitList[virtualTraitList:getSelectedIndex()]
+                    local selectedTrait = traitList[chosenTraitIdx]
                     if selectedTrait:checkDisabled() and not settings:get("ignoreRequirements") then
                         ui.showMessage("The conditions for this " .. traitList[startIdx].type .. " are not met.")
                     else
