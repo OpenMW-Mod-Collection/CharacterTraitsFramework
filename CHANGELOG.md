@@ -1,5 +1,9 @@
 # Character Traits Framework (OpenMW)
 
+## 1.1.1
+
+- Fixed the "Display -None- Traits" setting not working properly
+
 ## 1.1
 
 - Added trait search bar

@@ -36,7 +36,7 @@ Trait packs might be load order sensitive by themselves or have their own requir
 
 Compatible with practically anything.
 
-Comfirmed to be compatible:
+Confirmed to be compatible with:
 
 - [Natural Character Growth](https://www.nexusmods.com/morrowind/mods/57801) 2.0.8 or newer
 - [Skill Evolution](https://www.nexusmods.com/morrowind/mods/57802) 2.0.9 or newer

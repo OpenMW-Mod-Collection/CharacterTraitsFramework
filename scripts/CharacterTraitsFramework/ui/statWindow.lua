@@ -1,7 +1,7 @@
 local I = require("openmw.interfaces")
 local storage = require("openmw.storage")
 
-local settings = storage.playerSection("SettingsCharacterTraits")
+local settings = storage.playerSection("SettingsCharacterTraitsFramework")
 local API = I.StatsWindow
 local C = API.Constants
 local namespace = "CharacterTraits_"
